@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearCut AI | Professional Background Remover</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <span class="logo-text">ClearCut AI</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="https://github.com/danielgatis/rembg" target="_blank">Engine</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Remove backgrounds in <span class="accent">seconds</span>.</h1>
+            <p class="subtitle">High-quality, AI-powered background removal for your professional photos.</p>
+        </section>
+
+        <section class="tool-section">
+            <div class="upload-card" id="drop-zone">
+                <div class="upload-content" id="upload-prompt">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Upload an image</h3>
+                    <p>Drag & drop your image here, or click to browse</p>
+                    <input type="file" id="file-input" hidden accept="image/*">
+                    <button class="btn btn-primary" id="browse-btn">Browse Files</button>
+                    <p class="formats">Supports JPG, PNG, WebP</p>
+                </div>
+
+                <div class="processing-view hidden" id="processing-view">
+                    <div class="spinner"></div>
+                    <p>Removing background...</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card hidden" id="result-card">
+                <div class="result-header">
+                    <h3>Result</h3>
+                    <div class="actions">
+                        <button class="btn btn-secondary" id="reset-btn">Upload Another</button>
+                        <a href="#" class="btn btn-primary" id="download-btn" download>Download PNG</a>
+                    </div>
+                </div>
+                <div class="comparison-container">
+                    <div class="image-box original">
+                        <span class="label">Original</span>
+                        <img id="original-preview" src="" alt="Original Image">
+                    </div>
+                    <div class="image-box processed">
+                        <span class="label">Result</span>
+                        <div class="checkerboard-bg">
+                            <img id="result-image" src="" alt="Processed Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h4>Lightning Fast</h4>
+                <p>AI-powered processing removes backgrounds in seconds.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💎</div>
+                <h4>High Quality</h4>
+                <p>Professional edges and high resolution output.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔒</div>
+                <h4>Secure</h4>
+                <p>Your images are processed securely and deleted automatically.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ClearCut AI. Powered by rembg.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
